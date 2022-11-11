@@ -10,3 +10,5 @@
 - git from terminal
 - github
 - using ubuntu on virtual machine
+
+
