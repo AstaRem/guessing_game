@@ -8,31 +8,39 @@ maximum = None
 guess = None
 counter = 0
 
-print(f"You will be asked to enter the number. There are 4 difficulty levels: Easy: 0-10; Medium: 0-50; Hard: 0-100; Hardcore: 0-1000.")
+print(f"You will be asked to enter the number. There are 4 difficulty levels:")
+print("a - Easy: 0-10")
+print("b - Medium: 0-50")
+print("c - Hard: 0-100")
+print("d - Hardcore: 0-1000")
 
 
-level_user= input("Please enter a word which level you want to play: ")
-level = level_user.lower()
 
-if maximum == None:
-	if level == "easy":
+
+
+while maximum == None:
+	level_user= input("Please enter a letter a, b, c or d -  which level you want to play: ")
+	level = level_user.lower()
+	if level == "a":
 		maximum = 10
-	elif level == "medium":
+	elif level == "b":
 		maximum = 50
-	elif level == "hard":
+	elif level == "c":
 		maximum = 100
-	elif level == "hardcore":
+	elif level == "d":
 		maximum = 1000
 	else:
-		print("please enter a valid option")
-		maximum = None
-		
+		maximum == None
+		level_user= input("Invalid entry. Please press enter.")
+
+
+
 answer = random.randint(minimum, maximum)
 
 print(answer, level, maximum)
 
 
-while answer != guess:
+while answer != guess and maximum != 0:
 	guess = int(input(f"Guess the number from {minimum} to {maximum}: "))
 	counter += 1
 	if answer == guess:
